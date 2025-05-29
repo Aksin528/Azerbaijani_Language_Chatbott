@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <title>Profil Seçimi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: 'Jost', sans-serif;
+            background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+            color: #e0e0e0;
+        }
+        .container {
+            width: 800px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            background-color: #2a2e3b;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+        .profile-card {
+            width: 200px;
+            text-align: center;
+            background-color: #3a3e4f;
+            padding: 20px;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+        .profile-card:hover {
+            transform: scale(1.05);
+        }
+        .profile-card img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+        .profile-card h3 {
+            margin: 10px 0;
+            color: #a9d6ff;
+        }
+        .profile-card button {
+            background-color: #0078d4;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        .profile-card button:hover {
+            background-color: #005bb5;
+        }
+        .error {
+            color: #ff6b6b;
+            text-align: center;
+            margin: 10px 0;
+            display: none;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="profile-card">
+            <img src="https://i.pinimg.com/originals/92/19/f7/9219f7dd25ba584e6013803d1ea773a0.jpg" alt="Profil 1">
+            <h3>Profil 1</h3>
+            <button onclick="selectProfile('Profil 1', 'https://i.pinimg.com/originals/92/19/f7/9219f7dd25ba584e6013803d1ea773a0.jpg')">Seç</button>
+        </div>
+        <div class="profile-card">
+            <img src="https://i.pinimg.com/736x/40/a4/2f/40a42f4b27a14089b82a916aaff0b298.jpg" alt="Profil 2">
+            <h3>Profil 2</h3>
+            <button onclick="selectProfile('Profil 2', 'https://i.pinimg.com/736x/40/a4/2f/40a42f4b27a14089b82a916aaff0b298.jpg')">Seç</button>
+        </div>
+        <div class="profile-card">
+            <img src="https://wallpapers-clan.com/wp-content/uploads/2024/11/just-a-chill-guy-pfp-01.jpg" alt="Profil 3">
+            <h3>Profil 3</h3>
+            <button onclick="selectProfile('Profil 3', 'https://wallpapers-clan.com/wp-content/uploads/2024/11/just-a-chill-guy-pfp-01.jpg')">Seç</button>
+        </div>
+        <div class="profile-card">
+            <img src="https://yt3.googleusercontent.com/WCT5_g6nimaG5lNTLAFb3KNle6Abo-av2ijekY9fzI6g0KoaDGQLb7pW-MWFmm-QOE1KYUZjTg=s900-c-k-c0x00ffffff-no-rj" alt="Profil 4">
+            <h3>Profil 4</h3>
+            <button onclick="selectProfile('Profil 4', 'https://yt3.googleusercontent.com/WCT5_g6nimaG5lNTLAFb3KNle6Abo-av2ijekY9fzI6g0KoaDGQLb7pW-MWFmm-QOE1KYUZjTg=s900-c-k-c0x00ffffff-no-rj')">Seç</button>
+        </div>
+        <div class="profile-card">
+            <img src="https://whatifgaming.com/wp-content/uploads/2021/10/download.png.webp" alt="Profil 5">
+            <h3>Profil 5</h3>
+            <button onclick="selectProfile('Profil 5', 'https://whatifgaming.com/wp-content/uploads/2021/10/download.png.webp')">Seç</button>
+        </div>
+        <div class="profile-card">
+            <img src="https://i.pinimg.com/236x/6b/20/72/6b2072baf8efd82bff28c4241d2c861b.jpg" alt="Profil 6">
+            <h3>Profil 6</h3>
+            <button onclick="selectProfile('Profil 6', 'https://i.pinimg.com/236x/6b/20/72/6b2072baf8efd82bff28c4241d2c861b.jpg')">Seç</button>
+        </div>
+        <div class="error" id="profile-error"></div>
+    </div>
+    <script>
+        function selectProfile(name, avatar) {
+            const profile = { name, avatar };
+            $.ajax({
+                type: 'POST',
+                url: '/select_profile',
+                data: { profile: JSON.stringify(profile) },
+                success: function(data) {
+                    if (data.redirect) {
+                        window.location.href = data.redirect;
+                    } else {
+                        $('#profile-error').text(data.message).show();
+                    }
+                },
+                error: function(xhr) {
+                    const error = xhr.responseJSON?.error || 'Xəta baş verdi.';
+                    $('#profile-error').text(error).show();
+                }
+            });
+        }
+    </script>
+</body>
+</html>

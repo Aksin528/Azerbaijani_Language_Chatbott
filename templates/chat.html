@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <title>Chatbot - Azərbaycan dili</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #1a1a2e;
+            padding: 20px;
+            margin: 0;
+            display: flex;
+            color: #e0e0e0;
+        }
+
+        h1 {
+            text-align: center;
+            color: #00d4ff;
+            font-size: 32px;
+            margin-top: 70px;
+        }
+
+        #sidebar {
+            width: 250px;
+            background-color: #2a2e3b;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: -250px;
+            transition: left 0.3s ease;
+            overflow-y: auto;
+            padding: 20px;
+            z-index: 1000;
+        }
+
+        #sidebar.open {
+            left: 0;
+        }
+
+        #sidebar-header {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        #new-session-btn, #logout-btn {
+            background-color: #ff6b6b;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        #new-session-btn:hover, #logout-btn:hover {
+            background-color: #ff8787;
+        }
+
+        #profile-display {
+            position: fixed;
+            top: 10px;
+            right: 40px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background-color: #2e2e44;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+            z-index: 1001;
+        }
+
+        #profile-display img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        #profile-display span {
+            color: #a9d6ff;
+            font-weight: bold;
+        }
+
+        #history-toggle {
+            position: fixed;
+            top: 50%;
+            left: 10px;
+            transform: translateY(-50%);
+            background-color: #0078d4;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 18px;
+            z-index: 1002;
+            transition: transform 0.3s ease;
+        }
+
+        #history-toggle.open {
+            transform: translateY(-50%) translateX(250px);
+        }
+
+        #history-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        #history-list li {
+            padding: 10px;
+            border-bottom: 1px solid #444;
+            cursor: pointer;
+            color: #b0b0b0;
+        }
+
+        #history-list li:hover {
+            background-color: #3a3e4f;
+            color: #ffffff;
+        }
+
+        #chat-container {
+            flex-grow: 1;
+            margin-left: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        #chatbox {
+            width: 80%;
+            margin: 20px auto;
+            background-color: #252836;
+            padding: 20px;
+            border-radius: 10px;
+            min-height: 300px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            overflow-y: auto;
+            max-height: 500px;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #e0e0e0;
+        }
+
+        .message-container {
+            display: flex;
+            align-items: flex-start;
+            margin: 15px 0;
+        }
+
+        .bot-container {
+            flex-direction: row;
+        }
+
+        .user-container {
+            flex-direction: row-reverse;
+        }
+
+        .botText, .userText {
+            padding: 10px;
+            border-radius: 10px;
+            max-width: 70%;
+            opacity: 0;
+            animation: fadeIn 0.5s forwards;
+        }
+
+        .botText {
+            background-color: #2e2e44;
+            color: #a9d6ff;
+            margin-left: 10px;
+        }
+
+        .userText {
+            background-color: #2e443e;
+            color: #a9ffcc;
+            margin-right: 10px;
+        }
+
+        .file-message {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px;
+            border: 1px solid #555;
+            border-radius: 5px;
+            background-color: #333;
+            color: #e0e0e0;
+        }
+
+        .file-message img {
+            width: 20px;
+            height: 20px;
+            filter: brightness(0) invert(1);
+        }
+
+        .image-preview {
+            max-width: 100px;
+            border-radius: 5px;
+        }
+
+        .avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes blink {
+            0% { opacity: 0.2; }
+            20% { opacity: 1; }
+            100% { opacity: 0.2; }
+        }
+
+        .dot {
+            animation: blink 1.4s infinite;
+            color: #00d4ff;
+        }
+
+        .dot:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .dot:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        #userInput {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        #textInputWrapper {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            width: 80%;
+            max-width: 600px;
+            background-color: #2e2e44;
+            padding: 10px 15px;
+            border-radius: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        #textInput {
+            padding: 5px;
+            flex-grow: 1;
+            font-size: 16px;
+            border: none;
+            outline: none;
+            background: transparent;
+            color: #e0e0e0;
+        }
+
+        #textInput::placeholder {
+            color: #888;
+        }
+
+        #buttonInput {
+            background-color: #0078d4;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            padding: 5px 15px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        #buttonInput:hover {
+            background-color: #005bb5;
+        }
+
+        #fileInput {
+            display: none;
+        }
+
+        #fileInputLabel {
+            cursor: pointer;
+            font-size: 18px;
+            color: #a9d6ff;
+        }
+
+        #filePreview {
+            display: none;
+            align-items: center;
+            gap: 8px;
+            padding: 5px;
+            border-radius: 5px;
+            background-color: #3a3e4f;
+        }
+
+        #filePreview img.preview-image {
+            width: 50px;
+            height: 30px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        #filePreview img.file-icon {
+            width: 16px;
+            height: 16px;
+            filter: brightness(0) invert(1);
+        }
+
+        #fileName {
+            font-size: 14px;
+            color: #b0b0b0;
+        }
+
+        #removeFile {
+            cursor: pointer;
+            color: #ff8787;
+            font-weight: bold;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div id="sidebar">
+        <div id="sidebar-header">
+            <h2>Söhbət Tarixçəsi</h2>
+            <button id="new-session-btn">Yeni Sessiya</button>
+            <button id="logout-btn">Çıxış</button>
+        </div>
+        <ul id="history-list"></ul>
+    </div>
+    <div id="chat-container">
+        <div id="profile-display">
+            <img src="{{ session.selected_profile.avatar }}" alt="Profile Avatar">
+            <span>{{ session.username }}</span>
+        </div>
+        <h1>Azərbaycan Dili Chatbot</h1>
+        <button id="history-toggle">➡️</button>
+        <div id="chatbox">
+            <div class="message-container bot-container">
+                <img src="https://play-lh.googleusercontent.com/vGYT0893d6BQ8AcGWNXFyn-O-Bu_U4CQardf2jEIjNsN_JkR0G32crFJ8kHj0NRodw" class="avatar" alt="Bot Avatar">
+                <p class="botText"><span>Salam {{ session.username }}! Mənə istədiyini yaza bilərsən.</span></p>
+            </div>
+        </div>
+        <div id="userInput">
+            <div id="textInputWrapper">
+                <input type="file" id="fileInput" name="file" accept=".txt,.pdf,.docx,.jpg,.jpeg,.png,.webp" />
+                <label for="fileInput" id="fileInputLabel">📎</label>
+                <div id="filePreview">
+                    <span id="previewContent"></span>
+                    <span id="removeFile">✕</span>
+                </div>
+                <input id="textInput" type="text" placeholder="Mesaj yazmağa başla..." />
+                <button id="buttonInput" type="button">Göndər</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let conversationId = null;
+
+        function toggleSidebar() {
+            const sidebar = $('#sidebar');
+            const historyToggle = $('#history-toggle');
+            sidebar.toggleClass('open');
+            historyToggle.toggleClass('open');
+            if (sidebar.hasClass('open')) {
+                loadHistory();
+            }
+        }
+
+        function loadHistory() {
+            $.ajax({
+                type: "GET",
+                url: "/history",
+                success: function(data) {
+                    console.log("History loaded:", data);
+                    $('#history-list').empty();
+                    const conversationsById = {};
+                    data.forEach(msg => {
+                        if (!conversationsById[msg.conversation_id]) {
+                            conversationsById[msg.conversation_id] = [];
+                        }
+                        conversationsById[msg.conversation_id].push(msg);
+                    });
+                    Object.keys(conversationsById).forEach(id => {
+                        const firstMsg = conversationsById[id].find(msg => msg.role === "user");
+                        const preview = firstMsg ? firstMsg.content.substring(0, 50) + "..." : "Yeni söhbət";
+                        const timestamp = new Date(conversationsById[id][0].timestamp).toLocaleString('az-AZ', {
+                            day: '2-digit',
+                            month: '2-digit',
+                            year: 'numeric',
+                            hour: '2-digit',
+                            minute: '2-digit'
+                        });
+                        $('#history-list').append(`
+                            <li data-conversation-id="${id}">${preview} (${timestamp})</li>
+                        `);
+                    });
+                },
+                error: function(xhr) {
+                    console.log("History load error:", xhr.responseText);
+                    $('#history-list').empty();
+                }
+            });
+        }
+
+        function startNewSession() {
+            $.ajax({
+                type: "POST",
+                url: "/new_session",
+                success: function(data) {
+                    console.log("New session started:", data);
+                    conversationId = data.conversation_id;
+                    $('#chatbox').html(`
+                        <div class="message-container bot-container">
+                            <img src="https://play-lh.googleusercontent.com/vGYT0893d6BQ8AcGWNXFyn-O-Bu_U4CQardf2jEIjNsN_JkR0G32crFJ8kHj0NRodw" class="avatar" alt="Bot Avatar">
+                            <p class="botText"><span>Salam! Mənə istədiyini yaza bilərsən.</span></p>
+                        </div>
+                    `);
+                    if ($('#sidebar').hasClass('open')) loadHistory();
+                },
+                error: function(xhr) {
+                    console.log("New session error:", xhr.responseText);
+                }
+            });
+        }
+
+        function getUserResponse() {
+            const fileInput = document.getElementById("fileInput");
+            const file = fileInput.files[0];
+            const userText = $('#textInput').val().trim();
+
+            if (!userText && !file) {
+                return;
+            }
+
+            let userHTML = `
+                <div class="message-container user-container">
+                    <img src="{{ session.selected_profile.avatar }}" class="avatar" alt="User Avatar">
+                    <p class="userText">`;
+
+            let filePreviewURL = null;
+            if (file) {
+                if (file.type.startsWith('image/')) {
+                    filePreviewURL = URL.createObjectURL(file);
+                    userHTML += `
+                        <img src="${filePreviewURL}" class="image-preview" alt="Uploaded Image">
+                        <br>`;
+                } else {
+                    userHTML += `
+                        <span class="file-message">
+                            <img src="https://img.icons8.com/material-outlined/24/000000/attach.png" alt="File Icon">
+                            ${file.name}
+                        </span>
+                        <br>`;
+                }
+                if (userText) userHTML += `<span>${userText}</span>`;
+            } else {
+                userHTML += `<span>${userText}</span>`;
+            }
+
+            userHTML += `</p></div>`;
+            $('#chatbox').append(userHTML);
+
+            $('#textInput').val("");
+
+            const loadingHTML = `
+                <div class="message-container bot-container" id="loading">
+                    <img src="https://play-lh.googleusercontent.com/vGYT0893d6BQ8AcGWNXFyn-O-Bu_U4CQardf2jEIjNsN_JkR0G32crFJ8kHj0NRodw" class="avatar" alt="Bot Avatar">
+                    <p class="botText">
+                        🤖 Yazır<span class="dot">.</span><span class="dot">.</span><span class="dot">.</span>
+                    </p>
+                </div>`;
+            $('#chatbox').append(loadingHTML);
+
+            if (file) {
+                const formData = new FormData();
+                formData.append("file", file);
+                if (userText) formData.append("userMessage", userText);
+                formData.append("conversationId", conversationId || "");
+
+                $.ajax({
+                    type: "POST",
+                    url: "/upload",
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    success: function(data) {
+                        $('#loading').remove();
+                        const botHTML = `
+                            <div class="message-container bot-container">
+                                <img src="https://play-lh.googleusercontent.com/vGYT0893d6BQ8AcGWNXFyn-O-Bu_U4CQardf2jEIjNsN_JkR0G32crFJ8kHj0NRodw" class="avatar" alt="Bot Avatar">
+                                <p class="botText"><span>${data.response}</span></p>
+                            </div>`;
+                        $('#chatbox').append(botHTML);
+                        conversationId = data.conversation_id;
+                        $('#fileInput').val("");
+                        $('#filePreview').hide();
+                        $('#previewContent').empty();
+                        if (filePreviewURL) URL.revokeObjectURL(filePreviewURL);
+                        document.getElementById("chatbox").scrollTop = document.getElementById("chatbox").scrollHeight;
+                        if ($('#sidebar').hasClass('open')) loadHistory();
+                    },
+                    error: function(xhr) {
+                        $('#loading').remove();
+                        let errorMessage = "❌ Fayl yüklənmədi. ";
+                        if (xhr.status === 401) {
+                            errorMessage = "❌ Daxil olun.";
+                            window.location.href = "/";
+                        } else if (xhr.status === 404) {
+                            errorMessage += "Fayl tapılmadı.";
+                        } else if (xhr.status === 400) {
+                            errorMessage += "Fayl formatı dəstəklənmir.";
+                        } else {
+                            errorMessage += `Xəta: ${xhr.responseText || "Bilinməyən xəta."}`;
+                        }
+                        const botHTML = `
+                            <div class="message-container bot-container">
+                                <img src="https://play-lh.googleusercontent.com/vGYT0893d6BQ8AcGWNXFyn-O-Bu_U4CQardf2jEIjNsN_JkR0G32crFJ8kHj0NRodw" class="avatar" alt="Bot Avatar">
+                                <p class="botText"><span>${errorMessage}</span></p>
+                            </div>`;
+                        $('#chatbox').append(botHTML);
+                        $('#fileInput').val("");
+                        $('#filePreview').hide();
+                        $('#previewContent').empty();
+                        if (filePreviewURL) URL.revokeObjectURL(filePreviewURL);
+                        document.getElementById("chatbox").scrollTop = document.getElementById("chatbox").scrollHeight;
+                    }
+                });
+            } else {
+                $.ajax({
+                    type: "POST",
+                    url: "/get",
+                    data: { userMessage: userText, conversationId: conversationId || "" },
+                    success: function(data) {
+                        $('#loading').remove();
+                        const botHTML = `
+                            <div class="message-container bot-container">
+                                <img src="https://play-lh.googleusercontent.com/vGYT0893d6BQ8AcGWNXFyn-O-Bu_U4CQardf2jEIjNsN_JkR0G32crFJ8kHj0NRodw" class="avatar" alt="Bot Avatar">
+                                <p class="botText"><span>${data.response}</span></p>
+                            </div>`;
+                        $('#chatbox').append(botHTML);
+                        conversationId = data.conversation_id;
+                        document.getElementById("chatbox").scrollTop = document.getElementById("chatbox").scrollHeight;
+                        if ($('#sidebar').hasClass('open')) loadHistory();
+                    },
+                    error: function(xhr) {
+                        $('#loading').remove();
+                        let errorMessage = "❌ Xəta baş verdi.";
+                        if (xhr.status === 401) {
+                            errorMessage = "❌ Daxil olun.";
+                            window.location.href = "/";
+                        } else {
+                            errorMessage += ` ${xhr.responseText || "Bilinməyən xəta."}`;
+                        }
+                        const botHTML = `
+                            <div class="message-container bot-container">
+                                <img src="https://play-lh.googleusercontent.com/vGYT0893d6BQ8AcGWNXFyn-O-Bu_U4CQardf2jEIjNsN_JkR0G32crFJ8kHj0NRodw" class="avatar" alt="Bot Avatar">
+                                <p class="botText"><span>${errorMessage}</span></p>
+                            </div>`;
+                        $('#chatbox').append(botHTML);
+                        document.getElementById("chatbox").scrollTop = document.getElementById("chatbox").scrollHeight;
+                    }
+                });
+            }
+        }
+
+        $('#textInput').on('keypress', function(e) {
+            if (e.which === 13) {
+                e.preventDefault();
+                getUserResponse();
+            }
+        });
+
+        $('#buttonInput').on('click', function(e) {
+            e.preventDefault();
+            getUserResponse();
+        });
+
+        $("#fileInput").on('change', function() {
+            const file = this.files[0];
+            if (file) {
+                if (file.type.startsWith('image/')) {
+                    const filePreviewURL = URL.createObjectURL(file);
+                    $('#previewContent').html(`<img src="${filePreviewURL}" class="preview-image" alt="Image Preview">`);
+                } else {
+                    $('#previewContent').html(`
+                        <img src="https://img.icons8.com/material-outlined/24/000000/attach.png" class="file-icon" alt="File Icon">
+                        ${file.name}
+                    `);
+                }
+                $('#filePreview').show();
+            } else {
+                $('#filePreview').hide();
+                $('#previewContent').empty();
+            }
+        });
+
+        $("#removeFile").on('click', function() {
+            $('#fileInput').val('');
+            $('#filePreview').hide();
+            $('#previewContent').empty();
+        });
+
+        $("#history-toggle").on('click', toggleSidebar);
+
+        $("#new-session-btn").on('click', startNewSession);
+
+        $("#logout-btn").on('click', function() {
+            $.ajax({
+                type: "POST",
+                url: "/logout",
+                success: function(data) {
+                    window.location.href = data.redirect;
+                },
+                error: function(xhr) {
+                    console.log("Logout error:", xhr.responseText);
+                }
+            });
+        });
+
+        $(document).on('click', '#history-list li', function() {
+            const id = $(this).data('conversation-id');
+            conversationId = id;
+            $('#chatbox').empty();
+            $.ajax({
+                type: "GET",
+                url: "/history",
+                success: function(data) {
+                    const messages = data.filter(msg => msg.conversation_id === id);
+                    messages.forEach(msg => {
+                        const isBot = msg.role === "assistant";
+                        const html = `
+                            <div class="message-container ${isBot ? 'bot-container' : 'user-container'}">
+                                <img src="${isBot ? 'https://play-lh.googleusercontent.com/vGYT0893d6BQ8AcGWNXFyn-O-Bu_U4CQardf2jEIjNsN_JkR0G32crFJ8kHj0NRodw' : '{{ session.selected_profile.avatar }}'}" class="avatar" alt="${isBot ? 'Bot' : 'User'} Avatar">
+                                <p class="${isBot ? 'botText' : 'userText'}"><span>${msg.content}</span></p>
+                            </div>`;
+                        $('#chatbox').append(html);
+                    });
+                    document.getElementById("chatbox").scrollTop = document.getElementById("chatbox").scrollHeight;
+                }
+            });
+        });
+
+        loadHistory();
+    </script>
+</body>
+</html>

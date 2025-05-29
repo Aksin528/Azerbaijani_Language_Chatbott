@@ -1,0 +1,310 @@
+[
+    {
+        "role": "user",
+        "content": "salam",
+        "conversation_id": "",
+        "timestamp": "2025-05-07T15:41:59.807326"
+    },
+    {
+        "role": "assistant",
+        "content": "",
+        "conversation_id": "",
+        "timestamp": "2025-05-07T15:41:59.807346"
+    },
+    {
+        "role": "user",
+        "content": "salam",
+        "conversation_id": "d089ae02-f690-4871-bf47-fc638f482579",
+        "timestamp": "2025-05-07T15:42:13.835124"
+    },
+    {
+        "role": "assistant",
+        "content": "Salam! Sizə necə kömək edə bilərəm? 😊",
+        "conversation_id": "d089ae02-f690-4871-bf47-fc638f482579",
+        "timestamp": "2025-05-07T15:42:13.835144"
+    },
+    {
+        "role": "user",
+        "content": "bu gun necesen",
+        "conversation_id": "23d7b095-2ad0-4994-947f-3c4aa69ef4e1",
+        "timestamp": "2025-05-07T15:42:23.866545"
+    },
+    {
+        "role": "assistant",
+        "content": "Salam! Mən bir kompüter proqramıyam, hisslərim və emosiyalarım yoxdur amma çox sağol ki, soruşdun! 😊 Sizin bu günüz necə keçir? Sizə necə kömək edə bilərəm?",
+        "conversation_id": "23d7b095-2ad0-4994-947f-3c4aa69ef4e1",
+        "timestamp": "2025-05-07T15:42:23.866561"
+    },
+    {
+        "role": "user",
+        "content": "burda ne yazilib\n\nFayldan çıxarılan mətn:\nsalamasas",
+        "conversation_id": "",
+        "timestamp": "2025-05-07T15:47:18.680061"
+    },
+    {
+        "role": "assistant",
+        "content": "\"Salamasas\" sözünü təhlil edək:\n\n1. **\"Salam\"** - Ərəb mənşəli sözdür, \"salamlıq, sülh, sağlamlıq\" mənalarını verir. Azərbaycan dilində \"salam\" şəklində istifadə olunur (məsələn: \"Salam verdi\", \"Salam alış-verişi\").\n\n2. **\"Asas\"** - Yunan mənşəli (ἄσσα) və ya ərəbcə (أَسَاس) \"əsas, təməl, dayaq\" mənasında işlənir. Azərbaycan dilində \"əsas\" kimi qəbul edilmişdir (məsələn: \"Binanın əsası\", \"Əsas məsələ\").\n\n**Birləşmə:** \"Salamasas\" standart Azərbaycan dilində mövcud olmayan bir birləşmədir. Bu, iki ehtimal üzərində qiymətləndirilə bilər:\n- **Səhv nəticəsində:** \"Salam\" və \"əsas\" sözlərinin yan-yana yazılması zamanı baş verən qovuşma (məsələn, klaviaturada boşluq düyməsinin basılmaması).\n- **Xüsusi məna:** Əgər bu söz konkret bir kontekstdə (poeziya, termin, dialekt və ya şifahi ifadə) işlənibsə, müəyyən məna daşıyı bilər. Lakin standart lüğətlərdə qeyd edilmir.\n\n**Nümunə təklif:**  \nƏgər mətninizdə \"salamasas\" sözü keçirsə və mənasını anlamaq çətindirsə, mətnin tam kontekstini paylaşmaqla dəqiq təhlil etməyə kömək edə bilərəm.",
+        "conversation_id": "",
+        "timestamp": "2025-05-07T15:47:18.680084"
+    },
+    {
+        "role": "user",
+        "content": "sadece orda hansi soz yazilib. Hemin sozu yaz qisa sekilde",
+        "conversation_id": "",
+        "timestamp": "2025-05-07T15:47:46.738289"
+    },
+    {
+        "role": "assistant",
+        "content": "Fayldan çıxarılan tək söz: **salamasas**. \n\nQeyd: Bu sözün standart Azərbaycan dilində qarşılığı yoxdur. Təhlil üçün əvvəlki açıqlamalara baxa bilərsiniz.",
+        "conversation_id": "",
+        "timestamp": "2025-05-07T15:47:46.738317"
+    },
+    {
+        "role": "user",
+        "content": "salam",
+        "conversation_id": "5fd1375d-33a2-4971-8fa1-b8bee728473e",
+        "timestamp": "2025-05-07T15:50:24.847432"
+    },
+    {
+        "role": "assistant",
+        "content": "",
+        "conversation_id": "5fd1375d-33a2-4971-8fa1-b8bee728473e",
+        "timestamp": "2025-05-07T15:50:24.847454"
+    },
+    {
+        "role": "user",
+        "content": "salam",
+        "conversation_id": "",
+        "timestamp": "2025-05-07T16:37:17.206215"
+    },
+    {
+        "role": "assistant",
+        "content": "Salam! Sizə necə kömək edə bilərəm? 😊",
+        "conversation_id": "",
+        "timestamp": "2025-05-07T16:37:17.206224"
+    },
+    {
+        "role": "user",
+        "content": "salam",
+        "conversation_id": "",
+        "timestamp": "2025-05-09T10:13:48.746447"
+    },
+    {
+        "role": "assistant",
+        "content": "Bu sadə cavabdır, AI inteqrasiyasını əlavə etmək olar.",
+        "conversation_id": "",
+        "timestamp": "2025-05-09T10:13:48.746460"
+    },
+    {
+        "role": "user",
+        "content": "sasas",
+        "conversation_id": "",
+        "timestamp": "2025-05-09T10:13:58.536367"
+    },
+    {
+        "role": "assistant",
+        "content": "Bu sadə cavabdır, AI inteqrasiyasını əlavə etmək olar.",
+        "conversation_id": "",
+        "timestamp": "2025-05-09T10:13:58.536380"
+    },
+    {
+        "role": "user",
+        "content": "salam",
+        "conversation_id": "",
+        "timestamp": "2025-05-09T10:14:05.403508"
+    },
+    {
+        "role": "assistant",
+        "content": "Bu sadə cavabdır, AI inteqrasiyasını əlavə etmək olar.",
+        "conversation_id": "",
+        "timestamp": "2025-05-09T10:14:05.403521"
+    },
+    {
+        "role": "user",
+        "content": "salam",
+        "conversation_id": "",
+        "timestamp": "2025-05-09T10:19:27.813874"
+    },
+    {
+        "role": "assistant",
+        "content": "Salam! Sizə necə kömək edə bilərəm? 😊",
+        "conversation_id": "",
+        "timestamp": "2025-05-09T10:19:27.813892"
+    },
+    {
+        "role": "user",
+        "content": "Nasa ne vaxt yaranib?",
+        "conversation_id": "",
+        "timestamp": "2025-05-09T10:19:49.770351"
+    },
+    {
+        "role": "assistant",
+        "content": "**NASA (National Aeronautics and Space Administration)** 29 iyul 1958-ci ildə ABŞ Konqresi tərəfindən qəbul edilmiş \"Milli Aeronavtika və Kosmos Aktı\" ilə yaradılmışdır. Rəsmi olaraq fəaliyyətə 1 oktyabr 1958-ci ildə başlamışdır. Təşkilatın yaradılmasının əsas səbəbi Soyuq Müharibə dövründə SSRİ-nin kosmik nailiyyətlərinə (məsələn, Sputnik 1-in buraxılması) cavab vermək və ABŞ-nin kosmik tədqiqatlar sahəsindəki liderliyini bərpa etmək idi.",
+        "conversation_id": "",
+        "timestamp": "2025-05-09T10:19:49.770369"
+    },
+    {
+        "role": "user",
+        "content": "bu gun necesen?",
+        "conversation_id": "50dd1bd2-2832-4fcf-ac4c-93d42b87a3b4",
+        "timestamp": "2025-05-09T10:20:44.467862"
+    },
+    {
+        "role": "assistant",
+        "content": "Salam! Mən bir kompüter proqramıyam, hisslərim və emosiyalarım yoxdur, amma maraqlı sualın üçün təşəkkür edirəm! 😊 Bəs sizin bu gününüz necə keçir? Kömək edə biləcəyim bir şey varmı?",
+        "conversation_id": "50dd1bd2-2832-4fcf-ac4c-93d42b87a3b4",
+        "timestamp": "2025-05-09T10:20:44.467885"
+    },
+    {
+        "role": "user",
+        "content": "hello",
+        "conversation_id": "5fd1375d-33a2-4971-8fa1-b8bee728473e",
+        "timestamp": "2025-05-09T10:21:10.524576"
+    },
+    {
+        "role": "assistant",
+        "content": "Salam! Sizə necə kömək edə bilərəm? 😊",
+        "conversation_id": "5fd1375d-33a2-4971-8fa1-b8bee728473e",
+        "timestamp": "2025-05-09T10:21:10.524591"
+    },
+    {
+        "role": "user",
+        "content": "salam",
+        "conversation_id": "",
+        "timestamp": "2025-05-09T10:28:53.367504",
+        "user_id": 3
+    },
+    {
+        "role": "assistant",
+        "content": "Salam! Necə kömək edə bilərəm? Sizə hansı mövzuda kömək lazımdır? 😊",
+        "conversation_id": "",
+        "timestamp": "2025-05-09T10:28:53.367540",
+        "user_id": 3
+    },
+    {
+        "role": "user",
+        "content": "Asiya qitesinde nece olke var?",
+        "conversation_id": "",
+        "timestamp": "2025-05-09T10:38:11.373540",
+        "user_id": 3
+    },
+    {
+        "role": "assistant",
+        "content": "Asiya qitəsində ümumilikdə 49 müstəqil dövlət var. Bunlardan 5-i (Rusiya, Qazaxıstan, Türkiyə, Gürcüstan və Azərbaycan) transkontinental dövlətlərdir, yəni ərazisinin bir hissəsi Asiyada, digər hissəsi isə Avropada yerləşir. Ən böyük əraziyə malik Asiya ölkəsi Rusiyadır (Asiya hissəsi), ən çox əhalisi olan ölkə isə Çindir. \n\nƏlavə olaraq, Asiyada 5 tanınmamış və ya qismən tanınan dövlət də mövcuddur:\n- Tayvan (Çin Respublikası)\n- Şimali Kipr Türk Respublikası\n- Abxaziya\n- Cənubi Osetiya\n- Fələstin Dövləti (BMT-də müşahidəçi statusu)\n\nQeyd: Dövlətlərin siyahısı müxtəlif beynəlxalq tanınma statuslarına əsasən dəyişə bilər.",
+        "conversation_id": "",
+        "timestamp": "2025-05-09T10:38:11.373591",
+        "user_id": 3
+    },
+    {
+        "role": "user",
+        "content": "Azerbaycanda hazirda nece ehali var",
+        "conversation_id": "a9721465-9a0d-4ab9-aadb-13e0632a5618",
+        "timestamp": "2025-05-09T10:38:43.756211",
+        "user_id": 3
+    },
+    {
+        "role": "assistant",
+        "content": "Azerbaycan Respublikasının hazırkı əhalisi təxminən **10,2 milyon nəfərdir** (2024-cü ilin məlumatlarına əsasən). Əhalinin sayı dövlət statistik qurumları tərəfindən müntəzəm olaraq yenilənir və demoqrafik dəyişikliklərə (təbii artım, miqrasiya və s.) görə tədricən dəyişə bilər. Daha dəqiq məlumat üçün rəsmi statistik mənbələrə müraciət etmək tövsiyə olunur. 😊",
+        "conversation_id": "a9721465-9a0d-4ab9-aadb-13e0632a5618",
+        "timestamp": "2025-05-09T10:38:43.756234",
+        "user_id": 3
+    },
+    {
+        "role": "user",
+        "content": "burda ne yazilib?\n\nFayldan çıxarılan mətn:\nsalamasas",
+        "conversation_id": "",
+        "timestamp": "2025-05-09T10:39:59.106855",
+        "user_id": 4
+    },
+    {
+        "role": "assistant",
+        "content": "Fayldan çıxarılan mətndə **\"salamasas\"** yazılıb. Bu ifadə standart Azərbaycan dilində məna kəsb etmir. Çox güman ki, yazıda səhv və ya qeyri-tam ifadədir. \n\nMümkün variantlar:\n1. **\"Salam\"** (sələmlaşma) + əlavə hərflər (məsələn, təkrar və ya təsadüfi yazı).\n2. **\"Salam necesen?\"** (\"Salam, necəsən?\") kimi bir ifadənin qısaldılması/yanlış yazılması.\n3. Faylın düzgün oxunmaması (mətnin korrupsiyası).\n\nƏlavə məlumat və ya kontekst versəniz, dəqiqləşdirə bilərəm. 😊",
+        "conversation_id": "",
+        "timestamp": "2025-05-09T10:39:59.106898",
+        "user_id": 4
+    },
+    {
+        "role": "user",
+        "content": "mene yeni bir txt fayli yaz ve icinde \"bu gun hava qesengdi\" yazilsin",
+        "conversation_id": "",
+        "timestamp": "2025-05-09T10:59:18.457684",
+        "user_id": 4
+    },
+    {
+        "role": "assistant",
+        "content": "Əla! Aşağıdakı Python kodunu istifadə edərək **\"hava.txt\"** adlı faylı yaradıb içərisinə **\"Bu gün hava qəşəngdi.\"** yaza bilərsiniz:\n\n```python\n# Faylı yarat və mətni yaz\nwith open(\"hava.txt\", \"w\", encoding=\"utf-8\") as fayl:\n    fayl.write(\"Bu gün hava qəşəngdi.\")\n```\n\n**Yoxlamaq üçün:**\n```python\n# Faylın məzmununu oxu və ekrana çap et\ntry:\n    with open(\"hava.txt\", \"r\", encoding=\"utf-8\") as fayl:\n        print(fayl.read())\nexcept FileNotFoundError:\n    print(\"Fayl mövcud deyil.\")\n```\n\n**Nəticə (hava.txt faylında):**\n```\nBu gün hava qəşəngdi.\n```\n\nKodu işlətdikdən sonra eyni qovluqda **hava.txt** faylı yaranacaq. Faylı əl ilə də açıb yoxlaya bilərsiniz. 😊",
+        "conversation_id": "",
+        "timestamp": "2025-05-09T10:59:18.457734",
+        "user_id": 4
+    },
+    {
+        "role": "user",
+        "content": "Yaponyada ozleri Tokio-ya ne deyirler",
+        "conversation_id": "",
+        "timestamp": "2025-05-11T17:45:47.038266",
+        "user_id": 3
+    },
+    {
+        "role": "assistant",
+        "content": "Salam! Yaponiyada özünü \"Tokyo\" adlandırmaq üçün iki əsas yolu var: \n\n1. **\"Watashi wa Tokyo desu\" (私は東京です)** – Bu, \"Mən Tokyoyam\" deməkdir. Bu ifadə formal və ümumi bir şəkildə istifadə olunur. \n\n2. **\"Tokyo to iimasu\" (東京と言います)** – Bu isə \"Mənə Tokyo deyirlər\" mənasını verir və daha çox təqdimat zamanı istifadə edilir. \n\nHər iki ifadə düzgün sayılır, lakin kontekstdən asılı olaraq fərqlənə bilər. Yapon dilində adətən özünü təqdim edərkən \"desu\" (です) şəkilçisi ilə ifadə daha çox işlənir. 😊\n\nƏlavə suallarınız varsa, çekinməyin! ✨",
+        "conversation_id": "",
+        "timestamp": "2025-05-11T17:45:47.038322",
+        "user_id": 3
+    },
+    {
+        "role": "user",
+        "content": "\n\nFayldan çıxarılan mətn:\nğ § ı ğ ibrilil 7 ,\ni ” hü ']\n$ 2-\n”\nə ”? d\n6 \\—.__l‘_.é__j_\\__- “\ni 9 “ə z— BL = i —\ne | R | T . AN A re\n, —- .'_.,'f'%'}ğ·'·iğ@? o Pl | S e P ; ) 18005 ·(ğğ'f'f 5 lç ? »__ x . kh‘\" .. ·N,;”_.\"' : e —\nDLl AL ”,ü - l Axry\nə yaa ü —, sə dx\n/ ) .\n- \\ ‘\\\"\ni .;\" ’:_\"_0 ‘/ k ”\n2 —, of > ) 4\n) $ i g | “ \\\n—a “ LN e ə ——\n0108 ..E— /) \\ İ N",
+        "conversation_id": "",
+        "timestamp": "2025-05-11T17:52:36.474815",
+        "user_id": 3
+    },
+    {
+        "role": "assistant",
+        "content": "Sizin göndərdiyiniz mesajda anlaşılmaz simvollar və ya qarışıq mətn görünür. Təəssüf ki, bu formada sualınızı başa düşmək mümkün deyil. Zəhmət olmasa, yenidən və ya daha aydın şəkildə ifadə edin. Kömək üçün hazırıq! 😊",
+        "conversation_id": "",
+        "timestamp": "2025-05-11T17:52:36.474865",
+        "user_id": 3
+    },
+    {
+        "role": "user",
+        "content": "Amerikada hal-hazirda saat necedi?",
+        "conversation_id": "",
+        "timestamp": "2025-05-12T04:38:03.315768",
+        "user_id": 3
+    },
+    {
+        "role": "assistant",
+        "content": "Amerikada hal-hazırda saat, bölgələr üzrə fərqlənir. Əsas vaxt zonaları aşağıdakılardır (UTC/GMT fərqi ilə):\n\n1. **Eastern Time (ET)**: UTC-5 (yayda UTC-4)  \n   *Nümunə: New York, Washington, Miami*\n\n2. **Central Time (CT)**: UTC-6 (yayda UTC-5)  \n   *Nümunə: Chicago, Dallas*\n\n3. **Mountain Time (MT)**: UTC-7 (yayda UTC-6)  \n   *Nümunə: Denver, Phoenix*\n\n4. **Pacific Time (PT)**: UTC-8 (yayda UTC-7)  \n   *Nümunə: Los Angeles, San Francisco*\n\nDəqiq vaxtı öyrənmək üçün [World Time Server](https://www.worldtimeserver.com/) kimi saytlardan istifadə edə bilərsiniz. 😊  \n**Nümunə (ET üzrə):** *14:30 PM (UTC-4, yay vaxtı aktivdir).*",
+        "conversation_id": "",
+        "timestamp": "2025-05-12T04:38:03.315807",
+        "user_id": 3
+    },
+    {
+        "role": "user",
+        "content": "hazirda Aemrikada saat necedir. qisa cavab ver",
+        "conversation_id": "",
+        "timestamp": "2025-05-12T04:42:26.767177",
+        "user_id": 3
+    },
+    {
+        "role": "assistant",
+        "content": "Hazırda ABŞ-da vaxt zonasına görə təxmini saatlar:  \n- **Eastern (NY):** 14:30 PM  \n- **Central (Chicago):** 13:30 PM  \n- **Mountain (Denver):** 12:30 PM  \n- **Pacific (LA):** 11:30 AM  \n\n*Yay vaxtı (DST) aktivdir. Dəqiq vaxt üçün onlayn yoxlayın.* ⏱️",
+        "conversation_id": "",
+        "timestamp": "2025-05-12T04:42:26.767217",
+        "user_id": 3
+    },
+    {
+        "role": "user",
+        "content": "naruto animesinde en gozel qizlarin adini ver",
+        "conversation_id": "",
+        "timestamp": "2025-05-29T09:56:42.532644",
+        "user_id": 5
+    },
+    {
+        "role": "assistant",
+        "content": "Naruto anime seriyasında ən gözəl qız personajlardan bəziləri aşağıdakılardır (subyektiv olsa da, fanatlar arasında populyar olanlar):\n\n1. **Hinata Hyuga** – Təvazökarlığı, məhəbbəti və unikal \"Byakugan\" gözləri ilə seçilir.  \n2. **Sakura Haruno** – Başlanğıcda narahat olsa da, güclü ninja kimi inkişaf edir və xarakteri ilə diqqət çəkir.  \n3. **Tsunade** – \"Sannin\"lərdən biri, gücü və həkim bacarıqları ilə yanaşı, görünüşü ilə də məşhurdur.  \n4. **Ino Yamanaka** – Cəsarəti və gözəl xarakteri ilə tanınır, həm də \"Yamanaka\" klanının nümayəndəsidir.  \n5. **Temari** – Qum kəndindən olan bu güclü ninja, ağıllı strategiyaları və unikal üslubu ilə sevilir.  \n6. **Tenten** – Silah ustası kimi bacarıqları və minimalist dizaynı ilə diqqət çəkən personaj.  \n7. **Karin Uzumaki** – Gizli bacarıqları və enerjik xarakteri ilə tanınır (maraqlı saç stili var).  \n\n**Qeyd:** Gözəllik subyektiv anlayışdır, bəziləri digər personajları (məsələn, **Kurenai Yuhi**, **Anko Mitarashi**) də üstün tuta bilər. Anime və manqada hər personajın özünəməxsus cazibəsi var! 😊",
+        "conversation_id": "",
+        "timestamp": "2025-05-29T09:56:42.532692",
+        "user_id": 5
+    }
+]
