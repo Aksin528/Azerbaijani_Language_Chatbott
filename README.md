@@ -43,4 +43,6 @@ Aksin Abdullayev
 Bu layihə öyrənmə və təcrübə məqsədilə yaradılıb. Açıq mənbəlidir. İstəyənlər inkişaf etdirə və uyğun şəkildə istifadə edə bilər.
 
 ![image](https://github.com/user-attachments/assets/127be536-adb1-48ab-a3b8-3999e9c338d2)
+![image](https://github.com/user-attachments/assets/bb8aa60d-efe7-4557-8cf8-111fe1dec2e1)
+
 
