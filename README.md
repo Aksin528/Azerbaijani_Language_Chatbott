@@ -16,6 +16,8 @@ Salam! Bu layihə Azərbaycan dilində ünsiyyət qura bilən sadə bir chatbot 
 git clone https://github.com/Aksin528/Azerbaijani_Language_Chatbott.git
 cd Azerbaijani_Language_Chatbott
 python app.py
+
+```
 🧠 Necə işləyir?
 Layihə Flask ilə yazılıb. İstifadəçi sual verdikdə chatbot cavab verir. Bütün danışıqlar conversation_history.json faylında saxlanılır. Verilənlər bazası isə users.db faylı ilə SQLite üzərində qurulub.
 
