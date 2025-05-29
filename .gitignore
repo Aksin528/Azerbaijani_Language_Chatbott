@@ -1,0 +1,15 @@
+# Python cache faylları
+__pycache__/
+*.pyc
+
+# SQLite verilənlər bazası
+users.db
+
+# Danışıq tarixçəsi faylı
+conversation_history.json
+
+# Yüklənən fayllar (şəkillər və s.)
+uploads/
+
+# Əgər `.env` faylı əlavə etsən (gizli məlumatlar üçün)
+.env
